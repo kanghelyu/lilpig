@@ -500,7 +500,7 @@ Object.assign(I18N, MORE);
 
 /* ---------- 语言切换 ---------- */
 const LANGS = [["zh-CN","中文"],["en","English"],["es","Español"],["fr","Français"],["ru","Русский"],["pt","Português"],["hi","हिन्दी"],["ar","العربية"]];
-let lang = localStorage.getItem("piggy-lang") || (navigator.language.startsWith("zh") ? "zh-CN" : (I18N[navigator.language] ? navigator.language : "zh-CN"));
+let lang = localStorage.getItem("lilpig-lang") || (navigator.language.startsWith("zh") ? "zh-CN" : (I18N[navigator.language] ? navigator.language : "zh-CN"));
 if (!I18N[lang]) lang = "zh-CN";
 
 const langsEl = document.getElementById("langs");
@@ -508,14 +508,14 @@ const langSelect = document.getElementById("langSelect");
 LANGS.forEach(([code, label]) => {
   const b = document.createElement("button");
   b.textContent = label;
-  b.onclick = () => { lang = code; localStorage.setItem("piggy-lang", code); apply(); };
+  b.onclick = () => { lang = code; localStorage.setItem("lilpig-lang", code); apply(); };
   b.dataset.code = code;
   langsEl.appendChild(b);
   const opt = document.createElement("option");
   opt.value = code; opt.textContent = label;
   langSelect.appendChild(opt);
 });
-langSelect.addEventListener("change", () => { lang = langSelect.value; localStorage.setItem("piggy-lang", lang); apply(); });
+langSelect.addEventListener("change", () => { lang = langSelect.value; localStorage.setItem("lilpig-lang", lang); apply(); });
 
 function apply(){
   const dict = I18N[lang];

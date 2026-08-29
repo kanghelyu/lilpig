@@ -1,9 +1,9 @@
-name = "piggy-ledger-site"
+name = "lilpig"
 compatibility_date = "2025-01-01"
 
-# 官网域名：piggy.kanghelyu.org（custom_domain 自动创建 DNS）
+# 官网域名：lilpig.kanghelyu.org（custom_domain 自动创建 DNS）
 routes = [
-  { pattern = "piggy.kanghelyu.org", custom_domain = true }
+  { pattern = "lilpig.kanghelyu.org", custom_domain = true }
 ]
 
 # 静态资源站点（index.html + assets/ + APK）
